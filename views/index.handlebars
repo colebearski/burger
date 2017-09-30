@@ -1,0 +1,23 @@
+<div class="row">
+
+  <h2 class="title">Get in my belly!</h2>
+  <div id="belly">
+
+    <!-- dynamically insert burgers here -->
+    {{#each burgers}}
+      {{#unless devoured}}
+
+      <form action="burger/eat/{{id}}" method="POST">
+        <div class="input-group">
+          <li class="form-control">{{id}}. {{burger_name}}</li>
+          <span class="input-group-btn">
+            <button class="btn btn-sucess devour-button" type="submit">I'm Hungry!</button>
+          </span>
+        </div>
+      </form>
+
+      {{/unless}}
+      {{/each}}
+
+    </div>
+  </div>

@@ -10,8 +10,35 @@ var orm = {
 		var queryString = "SELECT * FROM burgers";
 		connection.query(queryString, function (error, result) {
 			console.log(result);
+			cb(result);
 		});
 	},
+
+	// insertOne()
+	insertOne: function(burger_name, cb) {
+
+		var queryString = "INSERT INTO burgers SET ?";
+
+		/*
+		queryString += " (";
+		queryString += cols.toString();
+		queryString += ") ";
+		queryString += "VALUES (";
+		queryString += ") ";
+		*/
+
+		connection.query(queryString, vals, function (error, result) {
+			console.log(result);
+			cb(result);
+		});
+	},
+
+	// updateOne()
+	updateOne: function()
+
+}
+
+	/* god damnit
 
 	// insertOne()
 	insertOne: function(burger_name, cb) {
@@ -41,7 +68,8 @@ var orm = {
 		})
 
 	}
-}
+	*/
+
 
 // export orm
 module.exports = orm;
