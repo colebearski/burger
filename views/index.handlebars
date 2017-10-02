@@ -21,3 +21,36 @@
 
     </div>
   </div>
+
+
+  <!-- So not hungry now -->
+  <h2 class="title">So not hungry</h2>
+  <div id="not_hungry">
+
+    <!-- slip the eaten burgers -->
+
+    {{#each burgers}}
+      {{#if this.devoured}}
+        <div class="input-group">
+          <li class="form-control">{{this.id}}.{{this.burger_name}}</li>
+          <span class="input-group-btn">
+            <button class="btn btn-info notHungry-button" type="button">Hungry Again..</button>
+          </span>
+        </div>
+        {{/if}}
+      {{/each}}
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

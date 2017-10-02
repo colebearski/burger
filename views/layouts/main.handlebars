@@ -14,26 +14,52 @@
   <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/burger_style.css">
 </head>
 <body>
   
+  <!-- ultimate container div -->
   <div class="container">
 
+    <br>
+
+  <!-- borns
     <div class="jumbotron">
       <h2>Get In My Belly</h2>
     </div>
+  -->
 
+      <!-- get that stuff from index -->
       {{{ body }}}
 
+      <br><br>
 
+    <!-- place new awesomeness here -->
+    <form action="burger/create" method="POST">
+
+      <!-- text box/area -->
+      <div class="row">
+
+        <!-- burger input -->
+        <div class="form-group">
+          <label for="new_burger" class="title"> I guess you can order something new here</label>
+          <textarea class="form-control" id="new_burger" name="burger_name"></textarea>
+        </div>
+
+        <!-- submit form -->
+        <button id="submit-button" type="submit" class="btn btn-danger">Place that $httt</button>
+
+      </form>
+
+      <br>
 
   <!-- master container div -->
   </div>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 </body>
 </html>

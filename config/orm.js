@@ -16,59 +16,29 @@ var orm = {
 
 	// insertOne()
 	insertOne: function(burger_name, cb) {
-
-		var queryString = "INSERT INTO burgers SET ?";
-
-		/*
-		queryString += " (";
-		queryString += cols.toString();
-		queryString += ") ";
-		queryString += "VALUES (";
-		queryString += ") ";
-		*/
-
-		connection.query(queryString, vals, function (error, result) {
-			console.log(result);
+		connection.query("INSERT INTO burgers SET ?", {
+			burger_name: burger_name,
+			devoured: false,
+			// date: timestamp
+		}, function (error, result) {
+			if (error) throw error;
 			cb(result);
 		});
 	},
 
-	// updateOne()
-	updateOne: function()
-
-}
-
-	/* god damnit
-
-	// insertOne()
-	insertOne: function(burger_name, cb) {
-
-		var queryString = "INSERT INTO burgers SET ?", {
-			burger_name: burger_name,
-			devoured: false,
-			date: timestamp
-		},
-
-		connection.query(queryString, function (error, result) {
-			console.log(result);
-		});
-
-	},
-
-	// updateOne()
+	//updateOne()
 	updateOne: function(burger_id, cb) {
 
-		var queryString = "UPDATE burgers SET ? WHERE ?", {
-			devoured: true,
-			id: burger_id
-		},
-
-		connection.query(queryString, function (error, result) {
-			console.log(result);
-		})
-
+		// run my awesome sql
+		connection.query("UPDATE burgers SET ? WHERE ?", 
+			[{ devoured: true},
+			{id: burger_id}], function (error, result) {
+				if (error) throw error;
+				cb(result);
+			});
 	}
-	*/
+
+};
 
 
 // export orm
